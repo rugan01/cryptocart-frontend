@@ -1,0 +1,241 @@
+/* --- 1. Global Reset & Animated Web3 Background --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+  min-height: 100vh;
+  /* A deep, moving dark gradient to make the glass pop */
+  background: linear-gradient(-45deg, #0f172a, #1e1b4b, #312e81, #0f172a);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  /* The Fix: Giving the text vertical breathing room */
+  line-height: 1.3;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- 2. The Glassmorphism Utility --- */
+/* We apply this to our main dashboard and cards */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* --- 3. Dashboard Layout --- */
+.dashboard {
+  margin-top: 30px;
+}
+
+.wallet-text {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #cbd5e1;
+}
+
+.wallet-text code {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px 10px;
+  border-radius: 8px;
+  color: #a855f7;
+}
+
+.status-message {
+  padding: 15px;
+  margin: 20px auto;
+  max-width: 600px;
+  background: rgba(168, 85, 247, 0.2);
+  border: 1px solid rgba(168, 85, 247, 0.5);
+  border-radius: 10px;
+  font-weight: 600;
+  color: #f3e8ff;
+}
+
+/* --- 4. Add Product Form (Glass Style) --- */
+.add-product-section {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.add-product-section h3 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+input:focus {
+  border: 1px solid #a855f7;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* --- 5. Store Grid & Product Cards --- */
+hr {
+  border: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 40px 0;
+}
+
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 20px 0;
+}
+
+.product-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(168, 85, 247, 0.2);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.product-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.product-card p {
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+
+.product-card strong {
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+/* --- 6. Buttons (Gradients & Glows) --- */
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.connect-btn {
+  margin-top: 30px;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+.connect-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(139, 92, 246, 0.6);
+}
+
+.add-btn {
+  padding: 15px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+}
+
+.add-btn:hover {
+  background: linear-gradient(135deg, #34d399, #10b981);
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.buy-btn {
+  flex: 1;
+  padding: 12px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+}
+
+.buy-btn:hover {
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);
+}
+
+.confirm-btn {
+  flex: 1;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.confirm-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
