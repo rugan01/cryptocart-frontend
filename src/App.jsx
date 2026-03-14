@@ -131,7 +131,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>🛒 Cryptocart Escrow</h1>
+      <h1>🛒 Cryptocart: Web3 Edition</h1>
 
       {!account ? (
         <button onClick={connectWallet} className="connect-btn">
